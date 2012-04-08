@@ -28,7 +28,7 @@ class GameOfLife
   end
   
   def count_neighbors_at(point)
-    neighbors_at(point).map{|neighbor| @lives[neighbor]}.compact.size
+    neighbors_at(point).count{|neighbor| @lives[neighbor]}
   end
   
   def neighbors_at(point)
