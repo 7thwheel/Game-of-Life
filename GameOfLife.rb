@@ -5,8 +5,7 @@ class GameOfLife
   end
   
   def init(lives)
-    @lives = {}
-    lives.each{|point| @lives[point] = point}
+    @lives = lives.each_with_object({}){|point, hash| hash[point] = point}
   end
   
   def next
